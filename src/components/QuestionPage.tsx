@@ -1,4 +1,5 @@
-import { Component, CSSProperties } from 'react';
+import { Component } from 'react';
+import type { CSSProperties } from 'react';
 import './QuestionPage.css';
 
 interface QuestionPageProps {
@@ -12,7 +13,6 @@ interface QuestionPageState {
 }
 
 class QuestionPage extends Component<QuestionPageProps, QuestionPageState> {
-  private containerRef: HTMLDivElement | null = null;
   private noButtonTexts: string[] = [
     'No',
     'Are you sure?',
@@ -78,10 +78,7 @@ class QuestionPage extends Component<QuestionPageProps, QuestionPageState> {
     };
 
     return (
-      <div
-        className="question-page"
-        ref={(ref) => (this.containerRef = ref)}
-      >
+      <div className="question-page">
         <div className="flowers-background">
           {/* Shiuli flowers - the special ones! */}
           {Array.from({ length: 35 }).map((_, i) => (
