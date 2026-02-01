@@ -55,10 +55,10 @@ class IntroPage extends Component<IntroPageProps, IntroPageState> {
               <p className="mono-line line-3">But some things,</p>
               <p className="mono-line line-4">Some feelings,</p>
               <p className="mono-line line-5">They don't fade with the seasons.</p>
-              <p className="mono-line line-6">They grow.</p>
+              <p className="mono-line line-6">They haunt.</p>
               <p className="mono-line line-7">
-                From October's quiet waiting...<br />
-                To February's hopeful asking.
+                From October's silent devotion...<br />
+                To forever's inevitable claim.
               </p>
               <p className="mono-line line-8 special">Poushali,</p>
             </div>

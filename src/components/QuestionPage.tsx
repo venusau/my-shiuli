@@ -15,11 +15,11 @@ interface QuestionPageState {
 class QuestionPage extends Component<QuestionPageProps, QuestionPageState> {
   private noButtonTexts: string[] = [
     'No',
-    'Are you sure?',
+    'You think you have a choice?',
     'Really?',
-    'Think again...',
-    'Please?',
-    'One more time?',
+    'Still trying to escape?',
+    'There is no escape...',
+    'Just accept it',
   ];
   private textIndex: number = 0;
 
@@ -111,7 +111,7 @@ class QuestionPage extends Component<QuestionPageProps, QuestionPageState> {
           </div>
 
           <h1 className="question">Will you be my Valentine?</h1>
-          <p className="subtitle">Some moments are worth waiting for...</p>
+          <p className="subtitle">You already know the answer...</p>
 
           <div className="buttons-container">
             <button

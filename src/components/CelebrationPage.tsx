@@ -70,7 +70,7 @@ class CelebrationPage extends Component<{}, CelebrationPageState> {
         </div>
 
         <div className="celebration-content">
-          <h1 className="yay-text">I knew you'd say yes, Poushali</h1>
+          <h1 className="yay-text">What were you thinking? You're tied to me till death</h1>
 
           <div className="sparkle-container">
             <span className="sparkle">✨</span>
@@ -99,8 +99,8 @@ class CelebrationPage extends Component<{}, CelebrationPageState> {
 
           <div className="romantic-text">
             <p className="quote">
-              "Even if October ends,<br />
-              I'll be there... always"
+              "Even if Life ends,<br />
+              I'll be there... always - Like a ghost"
             </p>
           </div>
         </div>
