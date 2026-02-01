@@ -1,32 +1,41 @@
 import { Component } from 'react';
+import IntroPage from './components/IntroPage';
 import QuestionPage from './components/QuestionPage';
 import CelebrationPage from './components/CelebrationPage';
 import './App.css';
 
 interface AppState {
-  showCelebration: boolean;
+  currentPage: 'intro' | 'question' | 'celebration';
 }
 
 class App extends Component<{}, AppState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      showCelebration: false,
+      currentPage: 'intro',
     };
   }
 
+  handleContinueFromIntro = (): void => {
+    this.setState({ currentPage: 'question' });
+  };
+
   handleYesClick = (): void => {
-    this.setState({ showCelebration: true });
+    this.setState({ currentPage: 'celebration' });
   };
 
   render() {
-    const { showCelebration } = this.state;
+    const { currentPage } = this.state;
 
     return (
       <div className="app-container">
-        {!showCelebration ? (
+        {currentPage === 'intro' && (
+          <IntroPage onContinue={this.handleContinueFromIntro} />
+        )}
+        {currentPage === 'question' && (
           <QuestionPage onYesClick={this.handleYesClick} />
-        ) : (
+        )}
+        {currentPage === 'celebration' && (
           <CelebrationPage />
         )}
       </div>
