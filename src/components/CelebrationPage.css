@@ -1,0 +1,576 @@
+.celebration-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #C19A6B 0%, #D4A574 25%, #E8D5C4 50%, #F5DEB3 75%, #FFF8E7 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  animation: confetti-fall 3s linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.flower-petals {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.petal {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: url('/shiuli.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall-petals 6s linear infinite;
+  opacity: 0;
+}
+
+.accent-petal {
+  width: 45px;
+  height: 45px;
+}
+
+@keyframes fall-petals {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.celebration-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease-in;
+  max-width: 95%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.yay-text {
+  font-size: 4.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #E67E22, #D35400, #C0392B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 4px 6px rgba(211, 84, 0, 0.3));
+  animation: bounce-text 1.5s ease-in-out infinite;
+  letter-spacing: 3px;
+  line-height: 1.2;
+}
+
+@keyframes bounce-text {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.05);
+  }
+}
+
+.sparkle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sparkle {
+  font-size: 3rem;
+  animation: sparkle-pulse 1.5s ease-in-out infinite;
+}
+
+.sparkle:nth-child(2) {
+  width: 50px;
+  height: 50px;
+  background-image: url('/shiuli.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.sparkle:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.sparkle:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.sparkle:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes sparkle-pulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+.gif-container {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 450px;
+  border-radius: 30px;
+  overflow: visible;
+  animation: scaleUp 0.6s ease-out;
+  padding: 1rem;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0) rotate(-10deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.flower-frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.frame-flower {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: url('/shiuli.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: rotate-frame-flower 4s ease-in-out infinite;
+}
+
+.frame-flower.top-left {
+  top: -30px;
+  left: -30px;
+}
+
+.frame-flower.top-right {
+  top: -30px;
+  right: -30px;
+  animation-delay: 0.5s;
+}
+
+.frame-flower.bottom-left {
+  bottom: -30px;
+  left: -30px;
+  animation-delay: 1s;
+}
+
+.frame-flower.bottom-right {
+  bottom: -30px;
+  right: -30px;
+  animation-delay: 1.5s;
+}
+
+@keyframes rotate-frame-flower {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+
+.celebration-gif {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(211, 84, 0, 0.3);
+  animation: glow-flower 2.5s ease-in-out infinite;
+  border: 5px solid rgba(255, 255, 255, 0.8);
+}
+
+@keyframes glow-flower {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(230, 126, 34, 0.4),
+                0 0 60px rgba(211, 84, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(230, 126, 34, 0.7),
+                0 0 100px rgba(211, 84, 0, 0.5);
+  }
+}
+
+.love-message {
+  font-size: 2.2rem;
+  color: #8B4513;
+  margin-top: 3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(255, 248, 231, 0.8);
+  animation: fadeInUp 1s ease-out 0.5s both;
+  line-height: 1.6;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.romantic-text {
+  margin-top: 2rem;
+  animation: fadeInUp 1.2s ease-out 1s both;
+}
+
+.quote {
+  font-size: 1.8rem;
+  color: #6B4423;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.8;
+  text-shadow: 0 2px 4px rgba(255, 248, 231, 0.6);
+}
+
+.rotating-flowers {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orbit-flower {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-image: url('/shiuli.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: orbit-rotation 15s linear infinite;
+  top: 50%;
+  left: 50%;
+}
+
+.orbit-1 {
+  animation-delay: 0s;
+}
+
+.orbit-2 {
+  animation-delay: -2.5s;
+}
+
+.orbit-3 {
+  animation-delay: -5s;
+}
+
+.orbit-4 {
+  animation-delay: -7.5s;
+}
+
+.orbit-5 {
+  animation-delay: -10s;
+}
+
+.orbit-6 {
+  animation-delay: -12.5s;
+}
+
+@keyframes orbit-rotation {
+  0% {
+    transform: rotate(0deg) translateX(250px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(360deg) translateX(250px) rotate(-360deg);
+    opacity: 0.3;
+  }
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .yay-text {
+    font-size: 3.5rem;
+  }
+
+  .gif-container {
+    max-width: 80%;
+  }
+
+  .love-message {
+    font-size: 2rem;
+  }
+
+  .quote {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .celebration-content {
+    padding: 1.5rem;
+  }
+
+  .yay-text {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+  }
+
+  .sparkle-container {
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sparkle {
+    font-size: 2.2rem;
+  }
+
+  .sparkle:nth-child(2) {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gif-container {
+    max-width: 90%;
+    margin: 1.5rem auto;
+  }
+
+  .love-message {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    line-height: 1.5;
+  }
+
+  .quote {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .frame-flower {
+    width: 55px;
+    height: 55px;
+  }
+
+  .frame-flower.top-left,
+  .frame-flower.top-right {
+    top: -20px;
+  }
+
+  .frame-flower.bottom-left,
+  .frame-flower.bottom-right {
+    bottom: -20px;
+  }
+
+  .frame-flower.top-left,
+  .frame-flower.bottom-left {
+    left: -20px;
+  }
+
+  .frame-flower.top-right,
+  .frame-flower.bottom-right {
+    right: -20px;
+  }
+
+  .rotating-flowers {
+    width: 350px;
+    height: 350px;
+  }
+
+  .orbit-flower {
+    width: 55px;
+    height: 55px;
+  }
+
+  @keyframes orbit-rotation {
+    0% {
+      transform: rotate(0deg) translateX(175px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: rotate(360deg) translateX(175px) rotate(-360deg);
+      opacity: 0.3;
+    }
+  }
+
+  .petal {
+    width: 45px;
+    height: 45px;
+  }
+
+  .accent-petal {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .celebration-content {
+    padding: 1rem;
+  }
+
+  .yay-text {
+    font-size: 2rem;
+  }
+
+  .sparkle {
+    font-size: 1.8rem;
+  }
+
+  .sparkle:nth-child(2) {
+    width: 32px;
+    height: 32px;
+  }
+
+  .gif-container {
+    max-width: 92%;
+    padding: 0.5rem;
+  }
+
+  .love-message {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
+
+  .romantic-text {
+    margin-top: 1.5rem;
+  }
+
+  .quote {
+    font-size: 1rem;
+  }
+
+  .frame-flower {
+    width: 45px;
+    height: 45px;
+  }
+
+  .frame-flower.top-left,
+  .frame-flower.top-right {
+    top: -15px;
+  }
+
+  .frame-flower.bottom-left,
+  .frame-flower.bottom-right {
+    bottom: -15px;
+  }
+
+  .frame-flower.top-left,
+  .frame-flower.bottom-left {
+    left: -15px;
+  }
+
+  .frame-flower.top-right,
+  .frame-flower.bottom-right {
+    right: -15px;
+  }
+
+  .rotating-flowers {
+    width: 250px;
+    height: 250px;
+  }
+
+  .orbit-flower {
+    width: 40px;
+    height: 40px;
+  }
+
+  @keyframes orbit-rotation {
+    0% {
+      transform: rotate(0deg) translateX(125px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: rotate(360deg) translateX(125px) rotate(-360deg);
+      opacity: 0.3;
+    }
+  }
+
+  .petal {
+    width: 35px;
+    height: 35px;
+  }
+
+  .accent-petal {
+    width: 28px;
+    height: 28px;
+  }
+}

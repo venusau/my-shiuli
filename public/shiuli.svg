@@ -1,0 +1,40 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shiuli flower with white petals and orange center -->
+
+  <!-- Petals (6-7 petals) -->
+  <g transform="translate(50, 50)">
+    <!-- Petal 1 -->
+    <ellipse transform="rotate(0)" cx="0" cy="-25" rx="12" ry="20" fill="#ffffff" stroke="#f0f0f0" stroke-width="0.5" opacity="0.95"/>
+
+    <!-- Petal 2 -->
+    <ellipse transform="rotate(51.4)" cx="0" cy="-25" rx="12" ry="20" fill="#ffffff" stroke="#f0f0f0" stroke-width="0.5" opacity="0.95"/>
+
+    <!-- Petal 3 -->
+    <ellipse transform="rotate(102.8)" cx="0" cy="-25" rx="12" ry="20" fill="#ffffff" stroke="#f0f0f0" stroke-width="0.5" opacity="0.95"/>
+
+    <!-- Petal 4 -->
+    <ellipse transform="rotate(154.2)" cx="0" cy="-25" rx="12" ry="20" fill="#ffffff" stroke="#f0f0f0" stroke-width="0.5" opacity="0.95"/>
+
+    <!-- Petal 5 -->
+    <ellipse transform="rotate(205.6)" cx="0" cy="-25" rx="12" ry="20" fill="#ffffff" stroke="#f0f0f0" stroke-width="0.5" opacity="0.95"/>
+
+    <!-- Petal 6 -->
+    <ellipse transform="rotate(257)" cx="0" cy="-25" rx="12" ry="20" fill="#ffffff" stroke="#f0f0f0" stroke-width="0.5" opacity="0.95"/>
+
+    <!-- Petal 7 -->
+    <ellipse transform="rotate(308.4)" cx="0" cy="-25" rx="12" ry="20" fill="#ffffff" stroke="#f0f0f0" stroke-width="0.5" opacity="0.95"/>
+
+    <!-- Center - orange to red gradient -->
+    <circle cx="0" cy="0" r="8" fill="url(#centerGradient)"/>
+    <circle cx="0" cy="0" r="4" fill="#d35400" opacity="0.8"/>
+  </g>
+
+  <!-- Gradient for center -->
+  <defs>
+    <radialGradient id="centerGradient">
+      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e67e22;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d35400;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+</svg>
